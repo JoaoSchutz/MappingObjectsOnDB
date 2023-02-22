@@ -35,3 +35,6 @@ CREATE INDEX CONCURRENTLY IF NOT EXISTS IDX_',upper(t.table_name),' ON ',$1,'.',
          group by 1,2,3
      )a;
 ```
+# Obs
+
+In addition, it creates a folder with standard SQL's that you use in the ETL, inserted by you in the Scripts class.
