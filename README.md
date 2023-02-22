@@ -1,8 +1,7 @@
 ## MappingObjectsOnDBTool
 
-This program has the purpose of mapping objects inside the database, from keywords (configured by you in the function present in the Function class).
+This program has the purpose of mapping objects inside the database, from keywords (configured by you in the function present in the Function class). Example:
 
---- Example
 ```sql
 insert into mapping_tool.KEYWORD (table, column , select, fks)
 select distinct
@@ -18,9 +17,7 @@ and t.table_schema in (SCHEMA_NAME)
 group by 1;
 ```
 
-It also generates a DDL script to generate your primary keys for each table in the database, to handle it.
-
---- Example
+It also generates a DDL script to generate your primary keys for each table in the database, to handle it. Example: 
 
 ```sql
 insert into mapping_tool.ddl(ddl)
