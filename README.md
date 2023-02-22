@@ -2,8 +2,8 @@
 
 This program has the purpose of mapping objects inside the database, from keywords (configured by you in the function present in the Function class).
 
-# Example
-
+--- Example
+```sql
 insert into mapping_tool.KEYWORD (table, column , select, fks)
 select distinct
                t.table_name as table
@@ -16,13 +16,13 @@ from information_schema.tables t
 where c.column_name ilike '%KEYWORD%'
 and t.table_schema in (SCHEMA_NAME)
 group by 1;
-
-#
+```
 
 It also generates a DDL script to generate your primary keys for each table in the database, to handle it.
 
-# Example
+--- Example
 
+```sql
 insert into mapping_tool.ddl(ddl)
 select string_agg(ddl,Chr(13)) as ddl
 from (
@@ -37,3 +37,4 @@ CREATE INDEX CONCURRENTLY IF NOT EXISTS IDX_',upper(t.table_name),' ON ',$1,'.',
                   and t.table_schema in (SCHEMA_NAME)
          group by 1,2,3
      )a;
+```
